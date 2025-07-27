@@ -33,6 +33,11 @@ Route::get('/jobs', function () {
             'id' => 5,
             'title' => 'teacher',
             'salary' => '$34,000',
+        ],
+        [
+            'id' => 6,
+            'title' => 'Accountant',
+            'salary' => '$15,000',
         ]
     ];
 
