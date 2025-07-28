@@ -21,7 +21,7 @@
                     <!-- Current: "", Default: "" -->
                 <x-nav-link href='/' :active="request()->is('/')" >HOME</x-nav-link>
                 <x-nav-link href='/jobs' :active="request()->is('jobs')" >JOBS</x-nav-link>
-                <x-nav-link href='/contact' :active="request()->is('contact')" type='true'>CONTACT</x-nav-link>
+                <x-nav-link href='/contact' :active="request()->is('contact')">CONTACT</x-nav-link>
              
 
 
