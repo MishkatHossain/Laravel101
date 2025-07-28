@@ -10,7 +10,7 @@
 
     <ul>
         @foreach($jobs as $job)
-            <a href='/jobs/'>
+            <a href='/jobs/6'>
                 <strong>{{$job['title']}}</strong> gets paid {{$job['salary']}} per year
             </a>
         @endforeach
