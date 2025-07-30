@@ -11,12 +11,11 @@
     <ul>
         @foreach($jobs as $job)
         <li>
-            <a href="/jobs/{{$job['id']}}">
+            <a href="/jobs/{{$job['id']}}" class='text-blue-500 hover:text-red-600 underline'>
                 <strong>{{$job['title']}}: </strong> gets paid {{$job['salary']}} per year
             </a>
         </li>
         @endforeach
     </ul>
-
 
 </x-layout>
