@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Employer;
 use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Testing\Fluent\Concerns\Has;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Job extends Model {
 
@@ -13,4 +14,9 @@ class Job extends Model {
 
     protected $table = 'job_listings';
     protected $fillable = ['title', 'salary'];
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }
