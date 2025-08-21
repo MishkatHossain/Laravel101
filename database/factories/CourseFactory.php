@@ -17,7 +17,10 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->company(),            
+            'code' => 'CS901', 
+            'description' => fake()->paragraph(), 
+            'credit_hours' => 3,
         ];
     }
 }
