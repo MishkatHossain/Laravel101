@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'password' => 'devOps123',
         ]);
 
-        $this->call(JobSeeder::class);
+        $this->call(JobSeeder::class);  
 
 
 
