@@ -13,6 +13,8 @@ class Employer extends Model
 
     public $fillable = ['name'];
 
+    
+
     public function jobs(){
         return $this->hasMany(Job::class);
     }

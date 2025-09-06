@@ -19,6 +19,8 @@
         @endforeach
     </div>
 
+
+
     <div>
         {{$jobs->links()}}
     </div>
