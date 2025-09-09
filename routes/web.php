@@ -8,6 +8,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+
+// index
 Route::get('/jobs', function () {
     
     $jobs = Job::with('employer')->latest()->simplePaginate(5);
@@ -16,11 +18,19 @@ Route::get('/jobs', function () {
     ]);
 });
 
+// create
 Route::get('/jobs/create', function(){
     return view('jobs.create');
 });
 
+// show 
+Route::get('/jobs/{id}', function ($id) {
+    $job = Job::find($id);
+    return view('jobs.show', ['job' => $job]);
+});
 
+
+// store
 Route::post('/jobs', function(){
     
     request()->validate([
@@ -28,27 +38,22 @@ Route::post('/jobs', function(){
         'salary' => ['required'],
     ]);
 
-
-
     Job::create([
-        
         'title'=> request('title'),
         'salary' => request('salary'),
         'employer_id' => 1,
 
     ]);
 
-    
-
     return redirect('/jobs');
-
 });
 
-
-Route::get('/jobs/{id}', function ($id) {
+// show 
+Route::get('/jobs/{id}/edit', function ($id) {
     $job = Job::find($id);
-    return view('jobs.show', ['job' => $job]);
+    return view('jobs.edit', ['job' => $job]);
 });
+
 
 
 
