@@ -14,7 +14,7 @@
     </p>
 
     <p class='mt-6'>
-        <x-button href="/jobs/create">Edit Jobs</x-button>
+        <x-button href="/jobs/{{$job->id}}/edit">Edit Jobs</x-button>
     </p>
 
 
