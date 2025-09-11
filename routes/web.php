@@ -54,6 +54,49 @@ Route::get('/jobs/{id}/edit', function ($id) {
     return view('jobs.edit', ['job' => $job]);
 });
 
+// update 
+Route::patch('/jobs/{id}', function ($id) {
+    // validate
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required'],
+    ]);
+
+    // authorize (on hold...)
+
+
+    // update the job
+    $job = Job::findOrfail($id);
+
+    $job->update([
+        'title' => request('title'),
+        'salary',
+    ]);
+    
+
+    return redirect('/jobs/'. $job->id);
+    
+    
+    // and persist
+    // redirect to the job page
+
+});
+
+// destroy 
+Route::delete('/jobs/{id}', function ($id) {
+    // authorize (on_ hold)
+
+    // delete the job
+
+    $job = Job::findOrfail($id);
+    $job->delete();
+
+    //
+
+    return redirect ('/jobs');
+
+
+});
 
 
 
