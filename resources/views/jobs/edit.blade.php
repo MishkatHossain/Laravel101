@@ -1,11 +1,11 @@
 <x-layout>
 
     <x-slot:title>
-        Edit Job
+        Edit Job {{$job->title}}
     </x-slot:title>
 
     <x-slot:heading>
-        Edit Job
+        Edit Job: {{$job->title}}
     </x-slot:heading>
 
     <form method="POST" action="/jobs/{{$job->id}}">
@@ -66,11 +66,26 @@
 
         </div>
 
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-            <a href="/jobs/{{$job->id}}" type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</a>
-            <button type="submit"
-                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
+        <div class="mt-6 flex items-center justify-between gap-x-6">
+            
+            <div class='flex items-center'>
+                <button class="">Delete</button>
+            </div>            
+            
+            <div class='flex items-center gap-x-6'>
+                <a href="/jobs/{{$job->id}}" type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</a>                
+                <div>
+                    <button type="submit" 
+                            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
+                </div>
+                
+            </div>            
         </div>
+    </form>
+
+    <form method='POST' action="/jobs/{{$job->id}}" class='hidden'>
+        @csrf
+        @method('DELETE')
     </form>
 
 

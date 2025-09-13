@@ -64,13 +64,12 @@ Route::patch('/jobs/{id}', function ($id) {
 
     // authorize (on hold...)
 
-
     // update the job
     $job = Job::findOrfail($id);
 
     $job->update([
         'title' => request('title'),
-        'salary',
+        'salary' => request('salary'),
     ]);
     
 
